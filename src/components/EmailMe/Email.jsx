@@ -1,44 +1,50 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Email.css";
 import { useGetContactsQuery } from "../../Api/api";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 
-const Email = (e) => {
+const Email = () => {
   const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
-  };
-  const { data: contacts, isFetching } = useGetContactsQuery();
+    const templateParams = {
+      user_name: e.target.user_name.value,
+      user_email: e.target.user_email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value
+    };
 
+    emailjs.send(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
+      templateParams,
+      process.env.REACT_APP_USER_ID
+    )
+      .then((result) => {
+        console.log(result.text);
+        e.target.reset(); // Réinitialise le formulaire en cas de réussite
+      })
+      .catch((error) => {
+        console.log(error.text);
+      });
+  };
+
+  const { data: contacts, isFetching } = useGetContactsQuery();
   const [contactsDetails, setContactDetails] = useState(contacts);
-  // const img_300 = "http://127.0.0.1:8000";
+
   useEffect(() => {
     setContactDetails(contacts);
   }, [contactsDetails, contacts]);
+
   if (isFetching) return "loading";
+
   return (
     <>
       <div className="reachme-container">
         <div className="reachme-title2">
           <h2>I Want To Hear From You</h2>
-
           <h3>Contact Me</h3>
         </div>
         <div className="row">
@@ -47,7 +53,7 @@ const Email = (e) => {
               <div className="row">
                 {contactsDetails &&
                   contactsDetails.map((details) => (
-                    <div className="contact-info  " key={details.id}>
+                    <div className="contact-info" key={details.id}>
                       <div className="contact-details">
                         <i className={details.icon}></i>
                         <div className="contact-mi">
@@ -69,7 +75,7 @@ const Email = (e) => {
             >
               <div className="row">
                 <div className="col-md-12 mb-3 hire-me-title"></div>
-                <div className="col-md-6 ">
+                <div className="col-md-6">
                   <input
                     type="text"
                     name="user_name"
@@ -77,7 +83,7 @@ const Email = (e) => {
                     placeholder="Enter Your Name"
                   />
                 </div>
-                <div className="col-md-6 ">
+                <div className="col-md-6">
                   <input
                     type="email"
                     name="user_email"

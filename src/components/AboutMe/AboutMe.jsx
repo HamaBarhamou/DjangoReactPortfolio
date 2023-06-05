@@ -65,8 +65,8 @@ const AboutMe = () => {
 
                   <div className="itscv">
                     <a
-                      href="https://drive.google.com/file/d/127RCSy1lUZE2sS8IgkxxPcUqbw1rYMOR/view"
-                      download="RESUME.pdf"
+                      href="https://drive.google.com/file/d/1lWnFTPUyMcUsRZLbQc559peU20NkmyH4/view?usp=sharing"
+                      download="en_anglais.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

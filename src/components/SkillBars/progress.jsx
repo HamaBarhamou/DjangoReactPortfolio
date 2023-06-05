@@ -31,6 +31,9 @@ const Progress = () => {
 
   const [icons, setIcons] = useState(langIcons);
 
+  const base_url = 'https://drive.google.com/uc?id='
+
+
   useEffect(() => {
     setIcons(langIcons);
   }, [langIcons]);
@@ -65,11 +68,12 @@ const Progress = () => {
   };
 
   const items = icons?.map((details4) => {
+    
     return (
       <div className="mylang" title={details4.lang_name} key={details4.id}>
         <div className="lang-info">
           <div className="lang-img">
-            <img src={details4.icon} alt="" />
+            <img src={base_url+details4.icon} alt="" />
           </div>
           <h3>{details4.lang_name}</h3>
           <p className={`${details4.exp_level}`}>{details4.exp_level}</p>
