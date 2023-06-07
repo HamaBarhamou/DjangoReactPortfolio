@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+sudo apt install gunicorn
 
 set -o errexit  # exit on error
 
