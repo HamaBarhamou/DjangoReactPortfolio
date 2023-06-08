@@ -31,9 +31,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 from django.contrib.auth.models import User
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myportfolio.settings')
+import django
+django.setup()
 from django.core.management import call_command
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myportfolio.settings')
 username = os.environ.get('USERNAME')
 password = os.environ.get('PASSWORD')
 
