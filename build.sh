@@ -2,10 +2,8 @@
 
 set -o errexit  # exit on error
 
-pip install -r requirements.txt
-echo "Insatllation de gunicorn"
-pip install gunicorn
-
+#pip install -r requirements.txt
+poetry install
 
 npm install
 npm run build
