@@ -6,7 +6,7 @@ import reactagle from "../../images/decoration/Rectangle-7.png";
 import shady from "../../images/decoration/dots.png";
 
 const AboutMe = () => {
-  const { data: aboutData, isFetching } = useGetAboutMeQuery();
+  const { data: aboutData } = useGetAboutMeQuery();
   const [aboutMe, setAboutMe] = useState(aboutData);
   const img_300 = "https://drive.google.com/uc?id=";
 
