@@ -14,3 +14,5 @@ npm run build
 
 python manage.py collectstatic --no-input
 python manage.py migrate
+
+python create_superuser.py 

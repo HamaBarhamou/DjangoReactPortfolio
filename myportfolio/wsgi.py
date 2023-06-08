@@ -12,9 +12,6 @@ from django.core.wsgi import get_wsgi_application
 from django.contrib.auth.models import User
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myportfolio.settings')
-if not User.objects.filter(username='admin').exists():
-    # Créer un superutilisateur avec les informations fournies
-    User.objects.create_superuser('username', 'hamabarhamou@gmail.com', 'passw0rd')
 
 application = get_wsgi_application()
 
