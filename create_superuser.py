@@ -2,6 +2,8 @@ import os
 import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myportfolio.settings')
+print("USERNAME = ",os.environ.get('USERNAME'))
+print("PASSWORD = ",os.environ.get('PASSWORD'))
 django.setup()
 
 from django.contrib.auth.models import User
