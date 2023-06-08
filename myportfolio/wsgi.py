@@ -45,7 +45,7 @@ if not User.objects.filter(username='admin').exists():
     application = get_wsgi_application()
 
     # Créer un superutilisateur avec les informations fournies
-    User.objects.create_superuser(username, 'hamabarhamou@gmail.com', password)
+    User.objects.create_superuser('username', 'hamabarhamou@gmail.com', 'passw0rd')
     
 
     # Réaffecter l'application WSGI
