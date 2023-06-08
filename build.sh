@@ -3,7 +3,6 @@
 set -o errexit  # exit on error
 
 #pip install -r requirements.txt
-poetry shell
 poetry install
 
 npm install
