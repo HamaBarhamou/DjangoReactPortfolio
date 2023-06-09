@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // api url
 //const baseUrl = "http://127.0.0.1:8000/api";
-const baseUrl = process.env.BASE_URL;
+//const baseUrl = process.env.BASE_URL;
+const baseUrl = 'https://hamabarhamou.onrender.com/api/'
 
 
 // Heroes' Section
