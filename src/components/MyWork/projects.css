@@ -223,3 +223,43 @@
   font-size: 11px;
   color: rgb(5, 5, 5) !important;
 }
+
+
+/* ... Vos autres styles ... */
+
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.owl-prev, .owl-next {
+  position: relative;
+  margin: 0 1em;
+  background: #FFFF00;  /* Couleur de fond en jaune */
+  color: #000000;
+  border-radius: 50%;
+  width: 80px;  /* Ajuster selon les besoins */
+  height: 80px;  /* Ajuster selon les besoins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transform: translate(0, -50%);
+}
+
+.owl-prev:hover, .owl-next:hover {
+  background: #000000;
+  color: #FFFF00;  /* Couleur du texte en jaune */
+}
+
+.owl-prev i, .owl-next i {
+  color: #FFFF00 !important;  /* Couleur des flèches en jaune */
+}
+
+.owl-prev:hover i, .owl-next:hover i {
+  color: #000000 !important;  /* Couleur des flèches au survol en noir */
+}

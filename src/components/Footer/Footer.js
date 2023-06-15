@@ -1,6 +1,8 @@
 import "./Footer.css";
 import Main from "./scrollTop";
 import { useGetSocialMediaQuery } from "../../Api/api";
+import GitHubLogo from '../../images/GitHub-Logo.png'
+
 import { useEffect, useState } from "react";
 const Footer = () => {
   const { data: social, isFetching } = useGetSocialMediaQuery();
@@ -35,12 +37,17 @@ const Footer = () => {
             <i class="bx bx-chevron-up"></i>
           </div>
           <div className="footer-info">
-            <div className="copywrite">
-              <p>
-                © {new Date().getFullYear()} All rights reserved | Made with ❤️
-                by ISSAKA HAMA Barhamou
-              </p>
-            </div>
+
+          <div className="copywrite">
+            <p>
+              © {new Date().getFullYear()} All rights reserved | Made with ❤️
+              by <a href="https://github.com/HamaBarhamou" target="_blank" rel="noopener noreferrer">ISSAKA HAMA Barhamou</a>
+              <a href="https://github.com/HamaBarhamou" target="_blank" rel="noopener noreferrer">
+                <img src={GitHubLogo} alt="GitHub Logo" style={{width: "20px", marginLeft: "5px"}}/>
+              </a>
+            </p>
+          </div>
+          
           </div>
         </div>
       </section>

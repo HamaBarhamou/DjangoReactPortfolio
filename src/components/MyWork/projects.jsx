@@ -16,7 +16,8 @@ const Projects = () => {
     nav: true,
     dots: true,
     autoplay: false,
-    navText: false,
+    //navText: false,
+    navText: ['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>'],
     smartSpeed: 1000,
     responsive: {
       0: {
